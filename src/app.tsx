@@ -5,7 +5,6 @@ import IMAGE from './react.jpg';
 import {ClickCounter} from "./ClickCounter";
 
 export const App = () => {
-    const ara = 0;
 
     return (<>
         <h1>
