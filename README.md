@@ -5,6 +5,8 @@
 [video](https://www.youtube.com/watch?v=Elpu7CIuqjY&list=PLC3y8-rFHvwiWPS2RO3BKotLRfgg_8WEo)
 6 | 0:0
 ```
+react + webpack config
+
 create .gitignore
 create build and src
 yarn init
@@ -30,6 +32,11 @@ yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
 create .eslintrc.js config
 yarn add -D eslint-plugin-import eslint-plugin-jsx-a11y
 yarn add -D eslint-plugin-eslint-comments@latest ???
+_____
+hooks
+useState
+useEffect
+useRef
 ```
 //     devtool: "cheap-module-source-map", прочитать в свободное время
 
