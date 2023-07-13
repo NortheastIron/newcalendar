@@ -36,7 +36,11 @@ _____
 hooks
 useState
 useEffect
-useRef
+useRef //useRef посчитал кол-во рендеров, сделал ссылку на дом элемент,
+        получил фокус, получил предыдущее состояние
+useMemo  //закешировал некоторые значения чтобы отвязать их от рендера 
+..можто сказать аналог shouldComponentUpdate
+useCallback
 ```
 //     devtool: "cheap-module-source-map", прочитать в свободное время
 
