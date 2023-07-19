@@ -1,25 +1,30 @@
-import React, {useState, useEffect, useRef, useMemo, useCallback} from 'react';
+import React, {useState, useEffect, useRef, useMemo, useCallback, useContext} from 'react';
 import './styles.css';
 import './stylesS.scss';
-
+import {AlertProvider} from "./alert/AlertContext";
 import IMAGE from './react.jpg';
 import {ClickCounter} from "./ClickCounter";
+import Main from "./main";
+import Alert from "./alert/Alert";
 
-import ItemsList from "./itemsList";
+
+// export const AlertContext = React.createContext();
+// export const AlertToggleContext = React.createContext();
+
+// export const useAlert = () => {
+//     return useContext(AlertContext);
+// };
+
+// export const useToggleAlert = () => {
+//     return useContext(AlertToggleContext);
+// };
+
 
 export const App = () => {
 
-    const [count, setCount] = useState(1);
-    const [colored, setColored] = useState(false);
+    // const [alert, setAlert] = useState(false);
 
-    const styles = {
-        color: colored ? 'darkred' : 'black'
-    };
-
-    //почти тоже самое что и мемо, но возвращаем колбек, а мемо возвращает сам результат
-    const generateItemsFromApi = useCallback(() => {
-        return new Array(count).fill('').map((_i, index) => `Element ${index + 1}`);
-    }, [count]);
+    // const toggle = () => setAlert(prev => !prev);
 
     return (<>
         <h1>
@@ -28,10 +33,15 @@ export const App = () => {
         <img src={IMAGE} alt="React logo" width='300' height='200'/>
         <ClickCounter/>
 
-        <h1 style={styles}>Kol-vo elementov: {count}</h1>
-        <button onClick={() => setCount(prev => prev + 1)}>Добавить</button>
-        <button onClick={() => setColored(prev => !prev)}>Izmeniti</button>
-
-        <ItemsList getItems={generateItemsFromApi}/>
+        {/*<AlertContext.Provider value={alert}>*/}
+        {/*    <AlertToggleContext.Provider value={toggle}>*/}
+        <AlertProvider>
+            <div className={'container'}>
+                <Alert/>
+                <Main/>
+            </div>
+        </AlertProvider>
+            {/*</AlertToggleContext.Provider>*/}
+        {/*</AlertContext.Provider>*/}
     </>);
 };
